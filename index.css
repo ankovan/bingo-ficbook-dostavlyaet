@@ -1,0 +1,39 @@
+table, td, th {
+  border: 0.1rem solid black;
+  border-radius: 0.6rem;
+  border-color: #1E1C3D;
+}
+ td {
+  padding: 0.35rem;
+  width: 8rem;
+  height: 8rem;
+  text-align: center; 
+  vertical-align: middle;
+  background-color: #482893;
+  border-color: #482893;
+  user-select: none;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.96rem;
+}
+td.active {
+ background-color: #D53AC9;
+ color: #2c013a;
+ border-color: #D53AC9;
+}
+table {
+  border-spacing: 0.4rem;
+  margin:auto;
+}
+caption {
+  margin-top: 2rem;
+  font-weight: 500;
+  font-size: 1.6rem;
+  user-select: none;
+  font-family: 'Press Start 2P';
+}
+body {
+  background-color: #1E1C3D;
+  border-color: #1E1C3D;
+  color: #a7ccfa;
+  font-size: 1.05rem;
+}
