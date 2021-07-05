@@ -14,10 +14,11 @@ table, td, th {
   user-select: none;
   font-family: 'Inter', sans-serif;
   font-size: 0.96rem;
+  cursor: pointer;
 }
 td.active {
  background-color: #D53AC9;
- color: #2c013a;
+ color: #20002b;
  border-color: #D53AC9;
 }
 table {
@@ -36,4 +37,60 @@ body {
   border-color: #1E1C3D;
   color: #a7ccfa;
   font-size: 1.05rem;
+}
+.modal-bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: rgba(0,0,0,0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  visibility: hidden;
+  opacity: 0;
+  transition: visibility 0s opacity 0.5s;
+}
+.bg-active {
+  visibility: visible;
+  opacity: 1;
+}
+.modal {
+  background-color: #1E1C3D;
+  color: #D53AC9;
+  height: 30%;
+  width: 30%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Press Start 2P';
+  border-radius: 0.6rem;
+  font-size: 2.8rem;
+  flex-direction: column;
+  position: relative;
+}
+.buttons .reload {
+  border-radius: 50%;
+  font-size: 2rem;
+  background-color: #482893;
+  color: #a7ccfa;
+  border: 0;
+  padding: 0.5rem 0.7rem;
+}
+.buttons .reload:hover {
+  background-color: #D53AC9;
+  color: #20002b;
+}
+.close-button {
+  background-color: #1E1C3D;
+  border: none;
+  position: absolute;
+  top: 0.25rem;
+  right: 0.25rem;
+  font-size: 1.2rem;
+  color: #a7ccfa;
+}
+.close-button:hover {
+  color: #D53AC9;
 }

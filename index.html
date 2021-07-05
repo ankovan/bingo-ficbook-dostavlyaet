@@ -8,6 +8,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" integrity="sha512-HK5fgLBL+xu6dm/Ii3z4xhlSUyZgTT9tuc/hSrtw6uzJOvgRr2a9jyxxT1ely+B+xFAmJKVSTbpM/CuL7qxO8w==" crossorigin="anonymous"/>
     <script type="text/javascript" src="index.js"></script>
   </head>
   <body>
@@ -17,8 +18,8 @@
             <caption>Фикбук доставляет: Бинго<caption>
         </tr>
       </thead>
-      <tbody>
-        <tr>
+      <tbody id="bingo_table">
+       <!-- > <tr>
           <td onclick="selectCell(this)" class="square"></td>
           <td onclick="selectCell(this)" class="square"></td>
           <td onclick="selectCell(this)" class="square"></td>
@@ -52,8 +53,19 @@
           <td onclick="selectCell(this)" class="square"></td>
           <td onclick="selectCell(this)" class="square"></td>
           <td onclick="selectCell(this)" class="square"></td>
-        </tr>
+        </tr> <-->
     </tbody>
     </table>
+    <div class="modal-bg">
+      <div class="modal">
+        <button class="close-button" onclick="closeModal()"><i class="fas fa-times"></i></button>
+        <div class="content">
+          <p>БИНГО!</p>
+        </div>
+        <div class="buttons">
+          <button class="reload" onclick="refreshThePage()"><i class="fas fa-redo-alt"></i></button>
+        </div>
+      </div>
+    </div>
   </body>
 </html>
