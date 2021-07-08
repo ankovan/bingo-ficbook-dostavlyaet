@@ -102,3 +102,9 @@ body {
 .close-button:hover {
   color: #D53AC9;
 }
+.name {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  font-family: 'Press Start 2P';
+}
