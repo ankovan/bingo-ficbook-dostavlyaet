@@ -1,3 +1,7 @@
+* {
+  margin: 0;
+  padding: 0;
+}
 table, td, th {
   border: 0.1rem solid black;
   border-radius: 0.6rem;
@@ -22,11 +26,13 @@ td.active {
  border-color: #D53AC9;
 }
 table {
+  margin-top: 3.8rem;
   border-spacing: 0.4rem;
-  margin:auto;
+  margin-left: auto;
+  margin-right: auto;
 }
 caption {
-  margin-top: 2rem;
+  margin-bottom: 1rem;
   font-weight: 500;
   font-size: 1.6rem;
   user-select: none;
