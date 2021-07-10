@@ -17,7 +17,7 @@ table, td, th {
   border-color: #482893;
   user-select: none;
   font-family: 'Inter', sans-serif;
-  font-size: 1rem;
+  font-size: 0.965rem;
   cursor: pointer;
 }
 td.active {
