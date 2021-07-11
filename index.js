@@ -5,11 +5,11 @@ const statements = [
   "Извините, если есть ошибки", "Много многоточий", "Бедная нутрия!",
   "Несовершеннолетний(-яя)  живёт один(а)", "Пробелы после знаков препинания",
   "КАПС", "Описание локации в одно слово", "POV", "Измены", "Называть героев «-глазка», «-волоска»",
-  "Шмот/Лук/Было надето", "Точное время", "***", "А-ля Лев Толстой",
+  "Шмот/Лук/Было надето", "Точное время", "***", "Кубики/Пресс",
   "Мери Сью", "В ШОКЕ", "Точка в названии фанфика", "ГГ младше 18", "«Гибрид/Полукровка»",
   "Водные процедуры", "Родители уехали", "Родители умерли/погибли", "Т/и", 'Приставка "з"',
   "Новенький(ая) в школе", "ГГ — это автор", "Лицо повествования меняется", "Ввод персонажа постредством столкновения с ГГ",
-  "В конце главы все отправляются спать", "Рост/вес персонажей",
+  "В конце главы все отправляются спать", "Рост/вес персонажей", "НА РУЧКИ!",
   "Углубить поцелуй", "ИНГЛИШ", "Запятые не нужны", "Боксёры",
   "... часть", "Мой первый фф, не судите строго", "Описание персонажей вначале", "Диалоги вида: первая буква имени и двоеточие", " Попытка в графоманию (провальная)", "Худи и/или оверсайз",
   "*Мысли* (в звездочках)", "Клиффхэнгеры", "Попаданец", "ТРОЯ", "Фанфик для Роскомнадзора"
@@ -75,6 +75,12 @@ function checkBingo() {
   }
   let verticalCounter = 0;
   let reverseVerticalCounter = 0;
+  let postageStampCounter = 0;
+  let outsideDiamondCounter = 0;
+  let insideDiamondCounter = 0;
+  let fourCorner = 0;
+  let insideFourCorner = 0;
+  let mid = (HEIGHT-1)/2;
   for (let h = 0; h < HEIGHT; h++) {
     let rowCounter = 0;
     for (let w = 0; w < WIDTH; w++) {
@@ -87,6 +93,35 @@ function checkBingo() {
         if (h + w == HEIGHT - 1) {
           reverseVerticalCounter++;
         }
+        if (h < 2 && w >= WIDTH -2) {
+          postageStampCounter++;
+        }
+        if (
+          (h == 0 && w == mid)
+          || (h == mid && (w == 0 || w == WIDTH -1))
+          || (h == HEIGHT - 1 && w == mid)
+        ){
+          outsideDiamondCounter++;
+        }
+        if (
+          (h == 1 && w == mid)
+          || (h == mid && (w == 1 || w == WIDTH -2))
+          || (h == HEIGHT - 2 && w == mid)
+        ){
+          insideDiamondCounter++;
+        }
+        if (
+          (w == 0 && (h == 0 || h == HEIGHT-1))
+          || (w == WIDTH-1 && (h == 0 || h == HEIGHT-1))
+        ) {
+          fourCorner++;
+        }
+        if (
+          (w == mid - 1 && (h == mid -1 || h == mid + 1))
+          || (w == mid + 1 && (h == mid - 1 || h == mid + 1))
+        ) {
+          insideFourCorner++;
+        }
       }
     }
     if (rowCounter == WIDTH) {
@@ -97,6 +132,21 @@ function checkBingo() {
     return true;
   }
   if (reverseVerticalCounter == HEIGHT) {
+    return true;
+  }
+  if (postageStampCounter == 4) {
+    return true;
+  }
+  if (outsideDiamondCounter == 4) {
+    return true;
+  }
+  if (insideDiamondCounter == 4) {
+    return true;
+  }
+  if (fourCorner == 4) {
+    return true;
+  }
+  if (insideFourCorner == 4) {
     return true;
   }
   for (let w = 0; w < WIDTH; w++) {
