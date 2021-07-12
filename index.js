@@ -157,7 +157,7 @@ function checkBingo() {
   return false
 }
 function wonBingo() {
-  const modalBg = document.querySelector('.modal-bg')
+  const modalBg = document.querySelector('.modal-bg.bingo-win')
   if (isBingo = true) {
     modalBg.classList.add('bg-active')
   }
@@ -166,6 +166,16 @@ function refreshThePage() {
   location.reload();
 }
 function closeModal() {
-  const modalBg = document.querySelector('.modal-bg');
+  const modalBg = document.querySelector('.modal-bg.bingo-win');
   modalBg.classList = ["modal-bg"];
+  modalBg.classList.add('bingo-win');
+}
+function showInfo() {
+  const modalBg = document.querySelector('.modal-bg.info')
+  modalBg.classList.add('bg-active')
+}
+function closeInfo() {
+  const modalBg = document.querySelector('.modal-bg.info');
+  modalBg.classList = ["modal-bg"];
+  modalBg.classList.add('info');
 }

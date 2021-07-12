@@ -12,6 +12,7 @@
     <script type="text/javascript" src="index.js"></script>
   </head>
   <body>
+    <button class="info-button" onclick="showInfo()"><i class="fas fa-question-circle"></i></button>
     <table>
       <thead>
         <tr>
@@ -19,45 +20,10 @@
         </tr>
       </thead>
       <tbody id="bingo_table">
-       <!-- > <tr>
-          <td onclick="selectCell(this)" class="square"></td>
-          <td onclick="selectCell(this)" class="square"></td>
-          <td onclick="selectCell(this)" class="square"></td>
-          <td onclick="selectCell(this)" class="square"></td>
-          <td onclick="selectCell(this)" class="square"></td>
-        </tr>
-        <tr>
-          <td onclick="selectCell(this)" class="square"></td>
-          <td onclick="selectCell(this)" class="square"></td>
-          <td onclick="selectCell(this)" class="square"></td>
-          <td onclick="selectCell(this)" class="square"></td>
-          <td onclick="selectCell(this)" class="square"></td>
-        </tr>
-        <tr>
-          <td onclick="selectCell(this)" class="square"></td>
-          <td onclick="selectCell(this)" class="square"></td>
-          <td onclick="selectCell(this)" class="square"></td>
-          <td onclick="selectCell(this)" class="square"></td>
-          <td onclick="selectCell(this)" class="square"></td>
-        </tr>
-        <tr>
-          <td onclick="selectCell(this)" class="square"></td>
-          <td onclick="selectCell(this)" class="square"></td>
-          <td onclick="selectCell(this)" class="square"></td>
-          <td onclick="selectCell(this)" class="square"></td>
-          <td onclick="selectCell(this)" class="square"></td>
-        </tr>
-        <tr>
-          <td onclick="selectCell(this)" class="square"></td>
-          <td onclick="selectCell(this)" class="square"></td>
-          <td onclick="selectCell(this)" class="square"></td>
-          <td onclick="selectCell(this)" class="square"></td>
-          <td onclick="selectCell(this)" class="square"></td>
-        </tr> <-->
-    </tbody>
+      </tbody>
     </table>
     <div class="name">— от ankovan</div>
-    <div class="modal-bg">
+    <div class="modal-bg bingo-win">
       <div class="modal">
         <button class="close-button" onclick="closeModal()"><i class="fas fa-times"></i></button>
         <div class="content">
@@ -65,6 +31,25 @@
         </div>
         <div class="buttons">
           <button class="reload" onclick="refreshThePage()"><i class="fas fa-redo-alt"></i></button>
+        </div>
+      </div>
+    </div>
+    <div class="modal-bg info">
+      <div class="modal">
+        <button class="close-button" onclick="closeInfo()"><i class="fas fa-times"></i></button>
+        <div class="content">
+          <h5 class="header">Как играть?</h5>
+          <p class="explanation">Читайте фанфики - отмечайте то, что вам попадётся. Чтоб выиграть, у вас должны получиться такие паттерны:</p>
+          <div class="pattern-box">
+            <img class="pattern" src="images/straight-line-across.png" alt="straight-line-across">
+            <img class="pattern" src="images/straight-line-down.png" alt="straight-line-down">
+            <img class="pattern" src="images/diagonal.png" alt="diagonal">
+            <img class="pattern" src="images/postage-stamp.png" alt="postage-stamp">
+            <img class="pattern" src="images/four-corners.png" alt="four-corners">
+            <img class="pattern" src="images/inside-four-corners.png" alt="inside-four-corners">
+            <img class="pattern" src="images/outside-diamond.png" alt="outside-diamond">
+            <img class="pattern" src="images/inside-diamond.png" alt="inside-diamond">
+          </div>
         </div>
       </div>
     </div>

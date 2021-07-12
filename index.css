@@ -27,7 +27,7 @@ td.active {
  border-color: #D53AC9;
 }
 table {
-  margin-top: 4.2rem;
+  margin-top: 4.28rem;
   border-spacing: 0.4rem;
   margin-left: auto;
   margin-right: auto;
@@ -108,4 +108,49 @@ body {
   bottom: 1.5rem;
   right: 1.5rem;
   font-family: 'Press Start 2P';
+}
+.info-button {
+  position: fixed;
+  top: 1.5rem;
+  right: 1.5rem;
+  font-size: 1.5rem;
+  border-radius: 50%;
+  padding: 0.5rem 0.7rem;
+  border: 0;
+  background-color: #482893;
+  color: #a7ccfa;
+}
+.info-button:hover {
+  background-color: #D53AC9;
+  color: #20002b;
+}
+.modal-bg.info .content {
+  font-size: 1.1rem;
+  margin-top: 1rem;
+  text-align: center;
+}
+.modal-bg.info .modal {
+  justify-content: unset;
+  width: 32%;
+  height: auto;
+}
+.modal-bg.info .pattern-box {
+  margin-bottom: 1.4rem;
+}
+.modal-bg.info .pattern {
+  width: 8rem;
+  height: 8rem;
+  margin-top: 1rem;
+}
+.modal-bg.info .explanation {
+  font-family:'Inter', sans-serif;
+  color: #a7ccfa;
+  margin-top: 1rem;
+  font-size: 1.1rem;
+  margin-left: 3rem;
+  margin-right: 3rem;
+}
+.modal-bg.info .header {
+  font-size: 1.4rem;
+  margin-top: 1rem;
 }
