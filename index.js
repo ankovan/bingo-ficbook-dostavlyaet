@@ -18,16 +18,24 @@ let cells;
 let bingoState;
 let HEIGHT = 5;
 let WIDTH = 5;
+let seed;
 window.onload = function() {
+    const url = new URL(window.location.href);
+    seed = url.searchParams.get("seed");
+    if (!seed) {
+      seed = uuidv4()
+    }
+    console.log(seed);
     initTable(HEIGHT, WIDTH);
     cells = document.getElementsByClassName("square");
+    
+    Math.seedrandom(seed);
     for(let i = 0; i < cells.length; ++i) {
       const index = Math.floor(Math.random()*statements.length)
       const randomStatements = statements[index];
       cells[i].innerHTML = randomStatements;
       statements.splice(index, 1); 
     }
-    
 }
 function selectCell(element) {
   const parseId = element.id.split("_");
@@ -178,4 +186,14 @@ function closeInfo() {
   const modalBg = document.querySelector('.modal-bg.info');
   modalBg.classList = ["modal-bg"];
   modalBg.classList.add('info');
+}
+function copySeed() {
+  const url = new URL(window.location.href);
+  const clipboard = navigator.clipboard;
+  clipboard.writeText(`${url}?seed=${seed}`);
+  const copyMessageElement = document.getElementById("copy-message");
+  copyMessageElement.classList.add("active");
+  setTimeout(function(){
+    copyMessageElement.classList = ["copy-message"];
+  }, 1500)
 }

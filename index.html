@@ -9,10 +9,16 @@
     <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" integrity="sha512-HK5fgLBL+xu6dm/Ii3z4xhlSUyZgTT9tuc/hSrtw6uzJOvgRr2a9jyxxT1ely+B+xFAmJKVSTbpM/CuL7qxO8w==" crossorigin="anonymous"/>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/seedrandom/3.0.5/seedrandom.min.js" integrity="sha512-+Ru50BzEpZjlFzVnjSmJfYFPFfY2hS0Kjlu/IvqaJoux7maF5lJrRVUJWJ2LevPls7rd242GLbWEt+zAo4OVVQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/uuid/8.1.0/uuidv4.min.js"></script>
     <script type="text/javascript" src="index.js"></script>
   </head>
   <body>
     <button class="info-button" onclick="showInfo()"><i class="fas fa-question-circle"></i></button>
+    <div class="seed-wrapper">
+      <button class="copy-seed" onclick="copySeed()"><i class="fas fa-share-alt-square"></i></button>
+      <div id = "copy-message" class="copy-message">Скопировано</div>
+    </div>
     <table>
       <thead>
         <tr>
