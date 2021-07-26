@@ -193,7 +193,12 @@ function closeInfo() {
 function copySeed() {
   const url = new URL(window.location.href);
   const clipboard = navigator.clipboard;
-  clipboard.writeText(`${url}?seed=${seed}`);
+  const seedParam = url.searchParams.get("seed");
+  let copyURL = `${url}?seed=${seed}`;
+  if (seedParam) {
+    copyURL = url;
+  }
+  clipboard.writeText(copyURL);
   const copyMessageElement = document.getElementById("copy-message");
   copyMessageElement.classList.add("active");
   setTimeout(function(){
